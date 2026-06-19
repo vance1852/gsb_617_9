@@ -2,7 +2,6 @@ import {
   defineConfig,
   presetUno,
   presetIcons,
-  presetAttributify,
   transformerDirectives,
   transformerVariantGroup,
 } from "unocss";
@@ -18,7 +17,6 @@ const buildScale = (name: string) => {
 export default defineConfig({
   presets: [
     presetUno(),
-    presetAttributify(),
     presetIcons({
       scale: 1.2,
       warn: true,
@@ -76,12 +74,4 @@ export default defineConfig({
     "i-mdi-alert",
     "i-mdi-information",
   ],
-  content: {
-    pipeline: {
-      include: [
-        /\.(vue|svelte|[jt]sx?|mdx?|astro|elm|php|phtml|html)($|\?)/,
-        "src/**/*.{vue,ts,tsx,js,jsx}",
-      ],
-    },
-  },
 });
